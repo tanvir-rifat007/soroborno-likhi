@@ -1,0 +1,22 @@
+{
+  "name": "soroborno-likhi-ml",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.3.1"
+  },
+  "dependencies": {
+    "@teachablemachine/image": "^0.8.5",
+    "@tensorflow/tfjs": "^4.20.0",
+    "@tensorflow/tfjs-node": "^4.20.0",
+    "@tensorflow/tfjs-node-gpu": "^4.20.0",
+    "@tensorflow/tfjs-vis": "^1.5.1",
+    "image-augment": "^1.1.1"
+  }
+}

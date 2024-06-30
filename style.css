@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: "Anonymous Pro", monospace;
+}
+
+header {
+  width: 100%;
+  background: #ffeb3b;
+  padding: 1em 0;
+  margin-bottom: 2em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin: 0;
+  color: #ffffffd1;
+}
+
+.app-container {
+  display: block;
+  width: 90%;
+  margin: 3em auto 2em auto;
+  padding: 1em;
+}
+
+.canvas-container {
+  display: block;
+  margin: 0 auto;
+  width: auto;
+}
+
+#myCanvas {
+  margin: 0 auto;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: white;
+}
+
+.imageToCheck {
+  display: none;
+}
+
+.buttons {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+button {
+  background: #33417a87;
+  color: #ffffffca;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 14px;
+  bottom: 3em;
+  font-family: "Anonymous Pro", monospace;
+  text-decoration: none;
+  cursor: pointer;
+}
+#download-link {
+  text-decoration: none;
+  color: #ffffffca;
+  border: none;
+  padding: 1em 2em;
+  margin: 1em 0;
+  font-size: 14px;
+  bottom: 3em;
+  font-family: "Anonymous Pro", monospace;
+}
+
+p.prediction {
+  display: block;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.dark-blue-mesh {
+  background-color: #0b1121; /* Dark background */
+  background-image: radial-gradient(at 40% 20%, #0b1121 0px, transparent 50%),
+    radial-gradient(at 80% 0%, #14203a 0px, transparent 50%),
+    radial-gradient(at 0% 50%, #1e2a52 0px, transparent 50%),
+    radial-gradient(at 80% 50%, #24325e 0px, transparent 50%),
+    radial-gradient(at 0% 100%, #2c3a6e 0px, transparent 50%),
+    radial-gradient(at 80% 100%, #33417a 0px, transparent 50%),
+    radial-gradient(at 0% 0%, #0b1121 0px, transparent 50%);
+}
+
+.light-blue-mesh {
+  background-color: #0b1121; /* Slightly lighter dark background */
+  background-image: radial-gradient(at 99% 6%, #14203a 0px, transparent 50%),
+    radial-gradient(at 55% 88%, #1e2a52 0px, transparent 50%),
+    radial-gradient(at 53% 27%, #24325e 0px, transparent 50%),
+    radial-gradient(at 89% 89%, #2c3a6e 0px, transparent 50%),
+    radial-gradient(at 35% 44%, #33417a 0px, transparent 50%);
+}
+
+.ash-mesh {
+  background-color: #0b1121;
+  background-image: linear-gradient(135deg, #0b1121 0%, #14203a 100%);
+}
+.glass {
+  backdrop-filter: blur(20px) saturate(200%) brightness(1.2);
+  background-color: rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
