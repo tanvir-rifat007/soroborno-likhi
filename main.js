@@ -1,4 +1,4 @@
-import * as tfImage from "@teachablemachine/image";
+// import * as tfImage from "@teachablemachine/image";
 
 import {
   clearRect,
@@ -70,7 +70,7 @@ const loadModel = async () => {
   const metadataURL = URL + "metadata.json";
 
   loadingContainer.innerText = `Loading...`;
-  model = await tfImage.load(modelURL, metadataURL);
+  model = await tmImage.load(modelURL, metadataURL);
 
   loadingContainer.innerText = ``;
 
