@@ -119,7 +119,7 @@ const predict = async (img) => {
 const speakPrediction = (text) => {
   // Ensure user interaction before playing audio
   const playAudio = () => {
-    const audio = new Audio(`./audio/${text}.m4a`);
+    const audio = new Audio(`./audio/${text}.mp3`);
     audio.play().catch((error) => console.error("Audio play failed:", error));
   };
 
