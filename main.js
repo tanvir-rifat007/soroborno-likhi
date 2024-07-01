@@ -117,6 +117,20 @@ const predict = async (img) => {
 };
 
 const speakPrediction = (text) => {
-  const audio = new Audio(`./audio/${text}.m4a`);
-  audio.play();
+  // Ensure user interaction before playing audio
+  const playAudio = () => {
+    const audio = new Audio(`./audio/${text}.m4a`);
+    audio.play().catch((error) => console.error("Audio play failed:", error));
+  };
+
+  // Detect if user interaction is needed
+  if (
+    typeof window.speechSynthesis !== "undefined" &&
+    window.speechSynthesis.speaking
+  ) {
+    window.speechSynthesis.cancel();
+    setTimeout(playAudio, 250);
+  } else {
+    playAudio();
+  }
 };
