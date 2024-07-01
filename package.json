@@ -12,7 +12,6 @@
     "vite": "^5.3.1"
   },
   "dependencies": {
-    "@teachablemachine/image": "^0.8.5",
     "@tensorflow/tfjs": "^4.20.0",
     "@tensorflow/tfjs-node": "^4.20.0",
     "@tensorflow/tfjs-node-gpu": "^4.20.0",
