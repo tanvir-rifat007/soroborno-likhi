@@ -11,55 +11,85 @@ async function train() {
   model.add(
     tf.layers.conv2d({
       inputShape: [28, 28, 4],
-      filters: 32,
-      kernelSize: [3, 3],
+      filters: 16,
+      kernelSize: 3,
+      strides: 1,
+      padding: "same",
       activation: "relu",
+      kernelInitializer: "heNormal",
     })
   );
   model.add(
-    tf.layers.conv2d({
-      filters: 32,
-      kernelSize: [3, 3],
-      activation: "relu",
+    tf.layers.maxPooling2d({
+      poolSize: 2,
+      strides: 2,
     })
   );
-  model.add(tf.layers.maxPooling2d({ poolSize: [2, 2] }));
-  model.add(tf.layers.dropout({ rate: 0.25 }));
 
   model.add(
     tf.layers.conv2d({
-      filters: 64,
-      kernelSize: [3, 3],
+      filters: 32,
+      kernelSize: 3,
+      strides: 1,
+      padding: "same",
       activation: "relu",
+    })
+  );
+
+  model.add(
+    tf.layers.maxPooling2d({
+      poolSize: 2,
+      strides: 2,
     })
   );
   model.add(
     tf.layers.conv2d({
       filters: 64,
-      kernelSize: [3, 3],
+      kernelSize: 3,
+      strides: 1,
+      padding: "same",
       activation: "relu",
     })
   );
-  model.add(tf.layers.maxPooling2d({ poolSize: [2, 2] }));
-  model.add(tf.layers.dropout({ rate: 0.25 }));
+  model.add(
+    tf.layers.maxPooling2d({
+      poolSize: 2,
+      strides: 2,
+    })
+  );
 
+  // Flatten for connecting to deep layers
   model.add(tf.layers.flatten());
-  model.add(tf.layers.dense({ units: 512, activation: "relu" }));
-  model.add(tf.layers.dropout({ rate: 0.5 }));
-  model.add(tf.layers.dense({ units: 11, activation: "softmax" }));
+
+  // One hidden deep layer
+  model.add(
+    tf.layers.dense({
+      units: 128,
+      activation: "tanh",
+    })
+  );
+  // Output
+  model.add(
+    tf.layers.dense({
+      units: 11,
+      activation: "softmax",
+    })
+  );
 
   const optimizer = tf.train.adam(0.001);
   model.compile({
-    optimizer: optimizer,
+    optimizer: "adam",
     loss: "categoricalCrossentropy",
     metrics: ["accuracy"],
   });
 
   model.summary();
 
-  const history = await model.fit(trainImages, trainLabels, {
+  await model.fit(trainImages, trainLabels, {
     batchSize: 64,
     epochs: 100,
+
+    validationData: [testImages, testLabels],
 
     validationSplit: 0.3,
     callbacks: tf.node.tensorBoard("/tmp/test/2021222"), // using a tensorboard callback

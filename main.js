@@ -1,5 +1,7 @@
 // import * as tfImage from "@teachablemachine/image";
 
+globalThis.navigator.serviceWorker.register("./sw.js");
+
 import {
   clearRect,
   displayPrediction,

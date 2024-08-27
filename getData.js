@@ -6,6 +6,27 @@ const testUrl = new URL("./data/test", import.meta.url).pathname;
 
 let trainData, testData;
 
+function shuffleCombo(array, array2) {
+  let counter = array.length;
+  console.assert(array.length === array2.length);
+  let temp, temp2;
+  let index = 0;
+  // While there are elements in the array
+  while (counter > 0) {
+    // Pick a random index
+    index = (Math.random() * counter) | 0;
+    // Decrease counter by 1
+    counter--;
+    // And swap the last element with it
+    temp = array[counter];
+    temp2 = array2[counter];
+    array[counter] = array[index];
+    array2[counter] = array2[index];
+    array[index] = temp;
+    array2[index] = temp2;
+  }
+}
+
 export function getData(dirUrl) {
   const imageTensors = [];
   const labels = [];
@@ -42,6 +63,8 @@ export function getData(dirUrl) {
     labels.push(labelMap[label]);
   }
 
+  // shuffleCombo(imageTensors, labels);
+
   return [imageTensors, labels];
 }
 
@@ -55,13 +78,13 @@ export const loadData = () => {
 export const getTrainData = () => {
   return {
     images: tf.concat(trainData[0]),
-    labels: tf.oneHot(tf.tensor1d(trainData[1], "int32"), 11).toFloat(),
+    labels: tf.oneHot(trainData[1], 11),
   };
 };
 
 export const getTestData = () => {
   return {
     images: tf.concat(testData[0]),
-    labels: tf.oneHot(tf.tensor1d(testData[1], "int32"), 11).toFloat(),
+    labels: tf.oneHot(testData[1], 11),
   };
 };
