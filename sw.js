@@ -2,10 +2,11 @@ globalThis.addEventListener("install", async (event) => {
   const assets = [
     "/",
     "./main.js",
-    "style.css",
+    "./style.css",
     "./train.js",
     "./utils.js",
     "./getData.js",
+    "./audio",
     "./audio/a.mp3",
     "./audio/b.mp3",
     "./audio/c.mp3",
