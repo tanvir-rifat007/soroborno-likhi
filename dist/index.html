@@ -1,0 +1,44 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Image Detector</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.17.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+    <link rel="manifest" href="/assets/app-DNJwUhVZ.webmanifest" />
+
+    <script type="module" crossorigin src="/assets/index-B0hnwnr-.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-CVWApuYy.css">
+  </head>
+  <body class="dark-blue-mesh glass">
+    <header class="light-blue-mesh glass">
+      <h1>স্বরবর্ণ লিখি</h1>
+    </header>
+
+    <section class="app-container">
+      <h4 id="loading"></h4>
+      <div class="canvas-container">
+        <canvas
+          id="myCanvas"
+          width="400"
+          height="400"
+          style="display: block"
+        ></canvas>
+      </div>
+      <p class="prediction"></p>
+    </section>
+
+    <img alt="" class="imageToCheck" />
+
+    <section class="buttons">
+      <button id="clear-button" class="glass">মুছে-ফেলুন</button>
+      <button id="check-button">যাচাই-করুন</button>
+      <a href="" id="download-link" class="glass">ডাউনলোড</a>
+    </section>
+
+    <audio id="audio"></audio>
+
+  </body>
+</html>

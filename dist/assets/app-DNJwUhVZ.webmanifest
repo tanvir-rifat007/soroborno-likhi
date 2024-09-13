@@ -1,0 +1,38 @@
+{
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "name": "স্বরবর্ণ লিখি এবং শুনি",
+  "short_name": "স্বরবর্ণ লিখি ",
+  "display": "standalone",
+  "theme_color": "#0063d0",
+  "icons": [
+    {
+      "src": "/maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "500x500",
+      "type": "image/png"
+    }
+  ],
+
+  "description": "স্বরবর্ণ লিখি এবং শুনি",
+  "screenshots": [
+    {
+      "src": "screenshot2.jpg",
+      "sizes": "1024x895",
+      "type": "image/jpg",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshot2.jpg",
+      "sizes": "1024x895",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
